@@ -1,51 +1,71 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en" class="h-100">
 
-    <head>
-        <title>Bia Simplí</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-        <meta name="google" content="notranslate" /> <!--Translate to english,fugure out how to do-->
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous" />
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
+<head>
+    <title>Bia Simplí Blag</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="static/css/custom.css" rel="stylesheet">
+   
+</head>
 
-    <body>
+<body class="d-flex flex-column h-100 main-bg">
+    
+     <!-- Navigation -->
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">Bia Simplí</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Recipes Plandaí-Bhunaithe</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Tapa</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Clarú</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Logáil Isteach</a>
-                        </li>
-                    </ul>
-                </div>
+                <a class="navbar-brand" href="{% url 'home' %}">Bia Simplí</a>
             </div>
-        </nav>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Abhaile</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Oidis
+                            Plandaí-Bhunaithe<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Glasraí</a></li>
+                            <li><a href="#">Pischineálaigh</a></li>
+                            <li><a href="#">Próitéin</a></li>
+                            <li><a href="#">Torthaí</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">
+                            Troscadh</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>
+                            Clarú</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logáil isteach</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-shrink-0 main-bg">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
-        <!-- Footer -->
-        <footer class="py-3 bg-grey">
-            <p class="m-0 text-dark text-center ">Copyright &copy; Bia Simplí</p>
-        </footer>
-    </body>
+    </main>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 dark-bg" id="footer-override">
+        <p class="m-0 text-center text-white">Bia Simplí Blag</p>
+        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+            <i class="fab fa-twitter-square ms-3"></i>
+            <i class="fab fa-instagram-square ms-3"></i>
+            <i class="fab fa-youtube-square ms-3"></i></p> 
+    </footer> 
+
+</body>
+
 </html>
