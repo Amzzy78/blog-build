@@ -128,6 +128,18 @@ At the top, we specify that this template inherits from.base.html Then display t
 
 Now visit the homepage and click on read more, it should redirect you to the post detail page.
 
+Creating Comments System With Django
+Let readers add comments on posts.
+
+Roadmap To Build A Comment System
+1. Create a model to save the comments.
+2. Create a form to submit comments and validate the input data.
+3. Add a view that processes the form and saves the new comment to the database.
+4. Edit the post detail template to display the list of comments and the form to add a new comment.
+
+
+Adding Pagination With Django
+
 
 ## Gitpod Reminders
 
