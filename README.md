@@ -140,6 +140,8 @@ Roadmap To Build A Comment System
 
 Adding Pagination With Django
 
+Integrating Summernote
+
 
 ## Gitpod Reminders
 
