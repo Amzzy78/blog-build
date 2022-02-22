@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
+from .models import Post, Comment
 
-from .models import Comment, Post
 
-
+@admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     list_display = ("title", "slug", "status", "created_on")
     list_filter = ("status", "created_on")
@@ -22,5 +22,4 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(active=True)
 
-
-admin.site.register(Post, PostAdmin)
+# admin.site.register(Post, PostAdmin)
