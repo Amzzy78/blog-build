@@ -142,6 +142,8 @@ Adding Pagination With Django
 
 Integrating Summernote
 
+User Upload images 
+
 
 ## Gitpod Reminders
 
