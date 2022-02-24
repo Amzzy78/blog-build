@@ -36,21 +36,6 @@
     </div>
 </header>
 
-<!--Forms Entry-->
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-     {{ form.as_p }}
-    <button type="submit">Upload</button>
-  </form>
-  
-  {% if img_obj %}
-    <h3>Succesfully uploaded : {{img_obj.title}}</h3>
-    <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
-  {% endif %}
-
-<div class="container">
-    <div class="row">
-
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
             {% for post in post_list %}
@@ -71,19 +56,18 @@
     </div>
 </div>
 {% if is_paginated %}
-  <nav aria-label="Page navigation conatiner"></nav>
-  <ul class="pagination justify-content-center">
-    {% if page_obj.has_previous %}
-    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; 
-        ROIMH </a></li>
-    {% endif %}
-    {% if page_obj.has_next %}
-    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> AR AGHAIDH  &raquo;</a></li>
+        <nav aria-label="Page navigation conatiner"></nav>
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
 
+            {% endif %}
+        </ul>
+        </nav>
+        </div>
     {% endif %}
-  </ul>
-  </nav>
-</div>
-{% endif %}
 
 {%endblock%}
