@@ -15,8 +15,13 @@ body {
     border-color: #dc281e;
 }
 
+ /* Header */
+
 .masthead {
-    background: #04916b;
+    /* background: #04916b; */
+    background: url("https://res.cloudinary.com/ann-marie-murphy/image/upload/v1645807190/okge0mxuh2c8sgrnh2hi.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
     height: auto;
     padding-bottom: 15px;
     box-shadow: 0 16px 48px #E3E7EB;
