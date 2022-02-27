@@ -18,6 +18,37 @@
 <div class="container">
     <div class="row">
 
+        <!-- Testing grids -->
+
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <h2>Pland-based eating</h2>
+                <p>Is simply good for the Environment and Human Health.
+                    <p>Plant-based or plant-forward eating patterns focus on foods primarily from plants.
+                        This includes not only fruits and vegetables, but also nuts, seeds, oils, whole grains, legumes.
+                        It does not mean that you are vegetarian or vegan and never eat meat or dairy.
+                        Rather, you are proportionately choosing more of your foods from plant sources.</p>
+                    
+
+                </p>
+              </div>
+              <div class="col-sm">
+                <h2>Irish proverb</h2>
+                <p>“Ni geal an gaire ach san ait a mbionn an biadh” is Irish for "Laughter is brightest where food is best.”</p>
+
+               
+              </div>
+              <div class="col-sm">
+                <h2>Cruelty free lifestyle</h2>
+                <p>
+                    Living cruelty-free means making decisions, as far as practicable and possible, that avoid the exploitation of humans, animals, and the planet.
+                     There are many ways we can try to live a life that's more conscious and considered. ...
+                      No one can live a completely cruelty-free lifestyle.
+              </div>
+            </div>
+          </div>
+
         <!-- Blog Entries Column -->
      <div class="col-md-8 mt-3 left">
             {% for post in post_list %}
@@ -25,7 +56,7 @@
                 <div class="card-body">
                 <div class="image-container">
                     {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/ann-marie-murphy/image/upload/v1644595504/spices-header_tvf2kh.jpg" class="img-responsive card-img-top" alt="Quoina Salad Bowl">
+                <img src="https://res.cloudinary.com/ann-marie-murphy/image/upload/v1644595504/spices-header_tvf2kh.jpg" class="img-responsive card-img-top" alt="Spices in bowls">
                 {% else %}
                 <img class="card-img-top" src="{{ post.featured_image.url }}">
                 {% endif %}
@@ -49,21 +80,21 @@
         {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
     </div> 
 
+    {% if post_list.has_other_pages %}
+    <nav aria-label="Page navigation conatiner"></nav>
+    <ul class="pagination justify-content-center">
+      {% if post_list.has_previous %}
+      <li><a href="?page={{ post_list.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+      {% endif %}
+      {% if post_list.has_next %}
+      <li><a href="?page={{ post_list.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+     {% endif %}
+    </ul>
+    </nav>
+  </div>
+  {% endif %}
+    
 
-{% if is_paginated %}
-        <nav aria-label="Page navigation conatiner"></nav>
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-        </nav>
-        
-    {% endif %}
 </div>
 {%endblock%} --> 
 

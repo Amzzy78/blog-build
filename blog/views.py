@@ -1,10 +1,7 @@
+from django.shortcuts import render, get_object_or_404
+from django.views import generic
 from .models import Post
 from .forms import CommentForm
-from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic, View
-from django.http import HttpResponseRedirect
-
-
 
 
 class PostList(generic.ListView):
@@ -12,10 +9,6 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = 'index.html'
     paginate_by = 3
-
-# class PostDetail(generic.DetailView):
-#     model = Post
-#     template_name = 'post_detail.html'
 
 
 def post_detail(request, slug):
@@ -47,5 +40,3 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
-
-
