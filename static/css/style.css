@@ -42,7 +42,7 @@ body {
 
 .masthead {
     /* background: #04916b; */
-    background: url("https://res.cloudinary.com/ann-marie-murphy/image/upload/v1645807190/okge0mxuh2c8sgrnh2hi.jpg");
+    background-image: url("https://res.cloudinary.com/ann-marie-murphy/image/upload/v1646153091/yhvbzcdzmnbj7krjfywa.jpg");
     background-repeat:no-repeat;
     background-size: cover;
     height: auto;
@@ -86,8 +86,7 @@ body {
   }
 
 /* Postdetail */
-.masthead-text {
-    color: #fdfdfd;
+
 }
 
 
