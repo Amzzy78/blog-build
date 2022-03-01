@@ -6,5 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('', include('blog.urls'), name='blog_urls'),
-    url(r'^logout$', views.auth_logout, name='auth_logout'),  
+    
 ]
