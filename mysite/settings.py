@@ -87,8 +87,9 @@ JAZZMIN_SETTINGS = {
     "site_header": "FÁILTE GO DTÍ AN BIA SIMPLÍ",
     "site_brand": "Bia Simplí",
     "site_icon": "images/favicon.png",
+    # Add your own branding here
     "bia_simplí": None,
-    "welcome_sign": "Welcome to Bia Simplí",
+    "welcome_sign": "FÁILTE GO DTÍ AN BIA SIMPLÍ",
     # Copyright on the footer
     "copyright": "Bia Simplí",
     "user_avatar": None,
