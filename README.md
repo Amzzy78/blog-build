@@ -12,7 +12,7 @@ Then performed make migrations. This applied all the unapplied migrations on the
 
 https://djangocentral.com/building-a-blog-application-with-django/
 
-Edit this turtorial 
+Edit this tutorial 
 
 Database Models
 I defined the data models for the blog. A model is a Python class that subclasses django.db.models.Model, in which each attribute represents a database field. Using this subclass functionality, we automatically have access to everything within django.db.models.Models and can add additional fields and methods as desired. We will have a Post model in our database to store posts.
@@ -142,7 +142,9 @@ Adding Pagination With Django
 
 Integrating Summernote
 
-User Upload images 
+User Upload images - difficulty in adding this feature
+
+Making Django Admin Jazzy With django-jazzmin
 
 
 ## Gitpod Reminders
