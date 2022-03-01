@@ -1,20 +1,27 @@
-/* Navbar Text */
-.navbar .navbar-brand {
-    color: rgb(22, 206, 22);
-    font-weight: bolder;
-    text-transform: uppercase;
-    /* text-shadow: #1f1d1a; */
+.tab-content input, textarea {
+    background-color: #343a40 !important;
+    color: white !important;
+    border: none !important;
 }
 
-/* Nav Links */
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    margin: auto !important;
+}
 
+brand-link navbar-success:hover{
+    background-color: #00bc8c !important;
+}
 
-/* Heading Text */
+#id_tags {
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
 
-.site-heading {
-    color: rgb(22, 206, 22);
-    font-weight: bolder;
-    text-transform: uppercase;
-    /* letter-spacing: -2px; */
-    text-shadow: 0 13.36px 8.896px #1f1d1a,0 -2px 1px rgb(56, 49, 49);
+#changelist-search .form-group {
+    margin: 10px !important;
+}
+
+.alert-success a{
+color: #ffffff !important;
 }

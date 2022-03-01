@@ -16,6 +16,28 @@ body {
     border-color: #dc281e;
 }
 
+/* Navbar Text */
+.navbar .navbar-brand {
+    color: rgb(22, 206, 22);
+    font-weight: bolder;
+    text-transform: uppercase;
+    /* text-shadow: #1f1d1a; */
+}
+
+/* Nav Links */
+
+
+/* Heading Text */
+
+.site-heading {
+    color: rgb(22, 206, 22);
+    font-weight: bolder;
+    text-transform: uppercase;
+    /* letter-spacing: -2px; */
+    text-shadow: 0 13.36px 8.896px #1f1d1a,0 -2px 1px rgb(56, 49, 49);
+}
+
+
  /* Header */
 
 .masthead {
@@ -67,4 +89,5 @@ body {
 .masthead-text {
     color: #fdfdfd;
 }
+
 
