@@ -2,12 +2,6 @@ from django.shortcuts import get_object_or_404, render
 from django.views import generic, View
 from .models import Post
 from .forms import CommentForm
-from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import redirect
-
-def auth_logout(request):
-  logout(request)
-  return redirect('home')
 
 
 class PostList(generic.ListView):
