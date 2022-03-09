@@ -1,19 +1,22 @@
 {% extends 'base.html' %} {% block content %}
     {% load crispy_forms_tags %}
 
-    <div class="masthead">
+    <div class="jumbotron jumbotron-fluid" style="background: url(https://res.cloudinary.com/ann-marie-murphy/image/upload/c_scale,q_auto:eco,w_1024/v1646839353/hret7d20mg1tjhoecxfp.webp) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="overlay">
+        </div>
         <div class="container">
             <div class="row g-0">
-                <div class="col-md-6 masthead-text">
+                <div class="col-md-6 site-heading">
                     <!-- Post title goes in these h1 tags -->
                     <h1 class="post-title">{{ post.title }}</h1>
                     <!-- Post author goes before the | the post's created date goes after -->
-                    <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                    <p class="post-subtitle text-white">{{ post.author }} | {{ post.created_on }}</p>
                 </div>
 
             </div>
         </div>
     </div>
+    
 
 <div class="container">
     <div class="row">
@@ -30,9 +33,9 @@
                         {% endif %} 
                         
                         <div class="card-img-overlay">
-                          <h5 class="card-title">Card title</h5>
+                          <h2 class="card-title text-warning">Card title</h2>
                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text">Last updated 3 mins ago</p>
+                          
                         </div>
                       </div>
                     {{ post.content | safe }}
