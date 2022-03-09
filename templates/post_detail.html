@@ -24,7 +24,7 @@
                 <p class="card-text ">
                     <div class="card bg-dark text-white">
                         {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img" src="https://res.cloudinary.com/ann-marie-murphy/image/upload/v1644595504/spices-header_tvf2kh.jpg" class="img-fluid" alt="Card image">
+                        <img class="card-img" src="https://res.cloudinary.com/ann-marie-murphy/image/upload/c_scale,q_auto:eco,w_1024/v1646839353/hret7d20mg1tjhoecxfp.webp" class="img-fluid" alt="Card image">
                         {% else %}
                         <img src=" {{ post.featured_image.url }}" width="100%">
                         {% endif %} 
@@ -83,6 +83,7 @@
                     {% endfor %}
                 </div>
             </div>
+            <div class="container">
             <div class="col-md-8 card mb-4  mt-3 ">
                 <div class="card-body">
                     {% if new_comment %}
@@ -99,7 +100,9 @@
                     {% endif %}
                 </div>
             </div>
+
         </div>
+
     </div>
     
 

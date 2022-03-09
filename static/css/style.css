@@ -47,6 +47,7 @@ body {
 
 
 /*Jumbotron*/
+/* Jumbotron search bar */
 
 .jumbotron {
     background-color: #a5bf36;
@@ -69,9 +70,18 @@ body {
     color: #4dd0e1;
   }
 
+  /* Jumbotron Header */
+
+  .jumbotron .jumbotron-fluid {
+    background-image: url("https://res.cloudinary.com/ann-marie-murphy/image/upload/v1644595504/spices-header_tvf2kh.jpg");
+    background-size: cover;
+}
+
+
+
 /* Postdetail */
 .masthead-text {
     color: #fdfdfd;
 }
 
-/* Post image */
+/* Post Comments*/

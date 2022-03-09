@@ -1,133 +1,139 @@
  {% extends "base.html" %}
-{% block content %}
-
+ {% block content %}
 
 <!-- Header -->
-<header class="masthead" id="masthead">
-  <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class=" col-md-8 col-md-10 mx-auto">
-                <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3"> Fáilte go dtí an Bia Simplí</h3>
-                    <p class="text-white">Is breá linn bia plandaí-bhunaithe...We love plant-based food! &nbsp
-                    </p>
-                </div>  
-            </div>
-        </div>
-    </div>
-</header>
-<br>
- <!--Search Bar-->
-<div class="container">
-    <div class="jumbotron">
-        <h4>Oidis | Recipes</h4>
+<!--Jumbotron-->
 
-<!-- Search form -->
-<form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
-    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-      aria-label="Search">
-    <i class="fas fa-search" aria-hidden="true"></i>
-  </form>
+
+ <div class="jumbotron jumbotron-fluid" style="background: url(https://res.cloudinary.com/ann-marie-murphy/image/upload/v1644595504/spices-header_tvf2kh.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+   <div class="overlay">
+   </div>
+   <div class="container">
+
+     <div class="row">
+       <div class=" col-md-8 col-md-10 mx-auto">
+         <div class="site-heading">
+           <h1 class="display-4 my-4 mt-3">Fáilte go dtí an Bia Simplí</h1>
+           <p class="lead text-white">Is breá linn bia plandaí-bhunaithe...We love plant-based food! &nbsp</p>
+
+         </div>
+       </div>
+     </div>
+   </div>
   <br>
- <p>Top Searches: <span>Rhubarb | Broccoli | Parsnip</span></p>
+  <br>
+ <!--Search Bar-->
+ <div class="container">
+   <div class="jumbotron">
+     <h4>Oidis | Recipes</h4>
 
-  </div>
-</div>
+     <!-- Search form -->
+     <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+       <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+       <i class="fas fa-search" aria-hidden="true"></i>
+     </form>
+     <br>
+     <p>Top Searches: <span>Rhubarb | Broccoli | Parsnip</span></p>
 
-<div class="container-fluid">
-    <div class="row">
+   </div>
+ </div>
 
-        <!-- Testing grids -->
+ <div class="container-fluid">
+   <div class="row">
 
-        <div class="container">
-            <div class="row">
-              <div class="col-sm">
-                <h2>Pland-based eating</h2>
-                <p>Is simply good for the Environment and Human Health.
-                    <p>Plant-based or plant-forward eating patterns focus on foods primarily from plants.
-                        This includes not only fruits and vegetables, but also nuts, seeds, oils, whole grains, legumes.
-                        It does not mean that you are vegetarian or vegan and never eat meat or dairy.
-                        Rather, you are proportionately choosing more of your foods from plant sources.</p>
-                    
+     <!-- Grid -->
 
-                </p>
-              </div>
-              <div class="col-sm">
-                <h2>Irish proverb</h2>
-                <p>“Ni geal an gaire ach san ait a mbionn an biadh” is Irish for "Laughter is brightest where food is best.”</p>
+     <div class="container p-3 my-3 bg-light text-black">
+       <div class="row">
+         <div class="col-sm">
+           <h2 class="text-warning">Plant-based eating</h2>
+           <p>Is simply good for the Environment and Human Health.
+             <p>Plant-based or plant-forward eating patterns focus on foods primarily from plants.
+               This includes not only fruits and vegetables, but also nuts, seeds, oils, whole grains, legumes.
+               It does not mean that you are vegetarian or vegan and never eat meat or dairy.
+               Rather, you are proportionately choosing more of your foods from plant sources.</p>
 
-               
-              </div>
-              <div class="col-sm">
-                <h2>Cruelty free lifestyle</h2>
-                <p>
-                    Living cruelty-free means making decisions, as far as practicable and possible, that avoid the exploitation of humans, animals, and the planet.
-                     There are many ways we can try to live a life that's more conscious and considered. ...
-                      No one can live a completely cruelty-free lifestyle.
-              </div>
-            </div>
-          </div> 
 
-        <!-- Blog Entries Column -->
+           </p>
+         </div>
+         <div class="col-sm">
+           <h2 class="text-warning">Irish proverb</h2>
+           <p>“Ni geal an gaire ach san ait a mbionn an biadh” is Irish for "Laughter is brightest where food is best.”
+           </p>
+
+
+         </div>
+         <div class="col-sm">
+           <h2 class="text-warning">Cruelty free lifestyle</h2>
+           <p>
+             Living cruelty-free means making decisions, as far as practicable and possible, that avoid the exploitation
+             of humans, animals, and the planet.
+             There are many ways we can try to live a life that's more conscious and considered. ...
+             No one can live a completely cruelty-free lifestyle.
+         </div>
+       </div>
+     </div>
+   
+
+     <!-- Blog Entries Column -->
      <div class="col-md-8 mt-3 left">
-         <div class="row">
-            {% for post in post_list %}
-            <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                <div class="image-container">
-                    <!-- {% if "placeholder" in post.featured_image.url %} -->
-                <img src="https://res.cloudinary.com/ann-marie-murphy/image/upload/v1644595504/spices-header_tvf2kh.jpg" class="img-responsive card-img-top" alt="Spices in bowls">
-                <!-- {% else %} -->
-                <img class="card-img-top" src="{{ post.featured_image.url }}">
-                <!-- {% endif %} -->
-                <div class="image-flash">
-                    <p class="author">Author: {{ post.author }}</p>
-                </div>
-                </div>
-                <!-- <div class="card-body"> -->
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <hr />
-                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} <i 
-                      class="far fa-heart"></i>{{ post.number_of_likes }}</p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Leigh Nios mo &rarr;</a>
-                <!-- </div> -->
-                
-            </div>
-            </div>
-            </div>
-            {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-                </div>
-                </div>
-                {% block sidebar %}
-                {% include 'sidebar.html' %} 
-                {% endblock sidebar %}
-        </div>
-      
-    <!-- Pagination -->
-    
-    {% if is_paginated %}
-    <nav aria-label="Page navigation conatiner"></nav>
-    <ul class="pagination justify-content-center">
-      {% if page_obj.has_previous %}
-      <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-      {% endif %}
-      {% if page_obj.has_next %}
-      <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-  
-      {% endif %}
-    </ul>
-    </nav>
-  
-  {% endif %}
+       <div class="row">
+         {% for post in post_list %}
+         <div class="col-md-4">
+           <div class="card mb-4">
+             <div class="card-body">
+               <div class="image-container">
+                 <!-- {% if "placeholder" in post.featured_image.url %} -->
+                 <img
+                   src="https://res.cloudinary.com/ann-marie-murphy/image/upload/c_scale,q_auto:eco,w_1024/v1646839353/hret7d20mg1tjhoecxfp.webp"
+                   class="img-responsive card-img-top" alt="Spices in bowls">
+                 <!-- {% else %} -->
+                 <img class="card-img-top" src="{{ post.featured_image.url }}">
+                 <!-- {% endif %} -->
+                 <div class="image-flash">
+                   <p class="author">Author: {{ post.author }}</p>
+                 </div>
+               </div>
+               <!-- <div class="card-body"> -->
+               <h2 class="card-title">{{ post.title }}</h2>
+               <hr />
+               <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} <i
+                   class="far fa-heart"></i>{{ post.number_of_likes }}</p>
+               <p class="card-text">{{post.content|slice:":200" }}</p>
+               <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Leigh Nios mo &rarr;</a>
+               <!-- </div> -->
+
+             </div>
+           </div>
+         </div>
+         {% if forloop.counter|divisibleby:3 %}
+       </div>
+       <div class="row">
+         {% endif %}
+         {% endfor %}
+       </div>
+     </div>
+     {% block sidebar %}
+     {% include 'sidebar.html' %}
+     {% endblock sidebar %}
+   </div>
+
+   <!-- Pagination -->
+
+   {% if is_paginated %}
+   <nav aria-label="Page navigation conatiner"></nav>
+   <ul class="pagination justify-content-center">
+     {% if page_obj.has_previous %}
+     <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+     {% endif %}
+     {% if page_obj.has_next %}
+     <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+     {% endif %}
+   </ul>
+   </nav>
+
+   {% endif %}
+ </div>
 </div>
-{%endblock%} 
-
-
-
+ {%endblock%}
