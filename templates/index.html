@@ -40,7 +40,7 @@
 
         <!-- Testing grids -->
 
-        <!-- <div class="container">
+        <div class="container">
             <div class="row">
               <div class="col-sm">
                 <h2>Pland-based eating</h2>
@@ -67,7 +67,7 @@
                       No one can live a completely cruelty-free lifestyle.
               </div>
             </div>
-          </div> -->
+          </div> 
 
         <!-- Blog Entries Column -->
      <div class="col-md-8 mt-3 left">
@@ -77,11 +77,11 @@
             <div class="card mb-4">
                 <div class="card-body">
                 <div class="image-container">
-                    {% if "placeholder" in post.featured_image.url %}
+                    <!-- {% if "placeholder" in post.featured_image.url %} -->
                 <img src="https://res.cloudinary.com/ann-marie-murphy/image/upload/v1644595504/spices-header_tvf2kh.jpg" class="img-responsive card-img-top" alt="Spices in bowls">
-                {% else %}
+                <!-- {% else %} -->
                 <img class="card-img-top" src="{{ post.featured_image.url }}">
-                {% endif %}
+                <!-- {% endif %} -->
                 <div class="image-flash">
                     <p class="author">Author: {{ post.author }}</p>
                 </div>

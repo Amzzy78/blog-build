@@ -32,7 +32,7 @@ def post_detail(request, slug):
 
     return render(
         request,
-        post_detail.html,
+        "post_detail.html",
         {
             "post": post,
             "comments": comments,
