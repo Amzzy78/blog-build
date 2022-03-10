@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from django.views import generic, View
+from django.views import generic
 from .models import Post
 from .forms import CommentForm
 
@@ -60,3 +60,6 @@ def post_detail(request, slug):
 #                 "liked": liked
 #             },
 #         )
+
+      
+            

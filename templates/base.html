@@ -40,17 +40,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                    <!-- <li class="nav-item text-black">
+                        <a class="nav-link active text-black font-weight-bold" aria-current="page" href="{% url 'home' %}">Bia Simplí</a>
+                    </li> -->
+                    {% if user.is_authenticated %}
                     <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="#">Oidis|Recipes</a>
+                        <a class="nav-link text-black font-weight-bold" href="{% url 'account_logout' %}">Logáil Amach|Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item text-black">
+                        <a class="nav-link text-black font-weight-bold" href="{% url 'account_signup' %}">Clarú|Signup</a>
                     </li>
                     <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="#">Clarú|Signup</a>
-                    </li>
-                    <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="#">
+                        <a class="nav-link text-black font-weight-bold" href="{% url 'account_login' %}">
                             Logáil isteach|Login</a>
                     </li>
-
+                    {% endif %}
                 </ul>
             </div>
         </div>

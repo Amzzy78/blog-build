@@ -1,5 +1,7 @@
  {% extends "base.html" %}
  {% block content %}
+ <!DOCTYPE html>
+<html lang="en">
 
 <!-- Header -->
 <!--Jumbotron-->
@@ -22,15 +24,17 @@
    </div>
   <br>
   <br>
+  
  <!--Search Bar-->
  <div class="container">
    <div class="jumbotron">
      <h4>Oidis | Recipes</h4>
 
      <!-- Search form -->
-     <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
-       <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
-       <i class="fas fa-search" aria-hidden="true"></i>
+     <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2" action="/action_page.php">
+       <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search.." aria-label="Search" name="search">
+       <button type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
+       
      </form>
      <br>
      <p>Top Searches: <span>Rhubarb | Broccoli | Parsnip</span></p>
@@ -38,8 +42,7 @@
    </div>
  </div>
 
- <div class="container-fluid">
-   <div class="row">
+
 
      <!-- Grid -->
 
@@ -77,7 +80,8 @@
        </div>
      </div>
    
-
+     <div class="container-fluid">
+      <div class="row">
      <!-- Blog Entries Column -->
      <div class="col-md-8 mt-3 left">
        <div class="row">
@@ -97,14 +101,14 @@
                    <p class="author">Author: {{ post.author }}</p>
                  </div>
                </div>
-               <!-- <div class="card-body"> -->
+               
                <h2 class="card-title">{{ post.title }}</h2>
                <hr />
                <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} <i
                    class="far fa-heart"></i>{{ post.number_of_likes }}</p>
                <p class="card-text">{{post.content|slice:":200" }}</p>
-               <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Leigh Nios mo &rarr;</a>
-               <!-- </div> -->
+               <a href="{% url 'post_detail' post.slug  %}" class="btn btn-warning">Leigh Nios mo &rarr;</a>
+              
 
              </div>
            </div>
