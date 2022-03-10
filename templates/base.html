@@ -11,10 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="https://kit.fontawesome.com/b41178b84b.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/b41178b84b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
@@ -24,7 +21,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-
+    <script src="https://kit.fontawesome.com/b41178b84b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
 <body>
@@ -45,11 +43,13 @@
                     </li> -->
                     {% if user.is_authenticated %}
                     <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="{% url 'account_logout' %}">Logáil Amach|Logout</a>
+                        <a class="nav-link text-black font-weight-bold" href="{% url 'account_logout' %}">Logáil
+                            Amach|Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="{% url 'account_signup' %}">Clarú|Signup</a>
+                        <a class="nav-link text-black font-weight-bold"
+                            href="{% url 'account_signup' %}">Clarú|Signup</a>
                     </li>
                     <li class="nav-item text-black">
                         <a class="nav-link text-black font-weight-bold" href="{% url 'account_login' %}">
@@ -60,16 +60,39 @@
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     <main class="flex-shrink-0 main-bg">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
     <!-- Footer -->
+
     <footer class="py-3 bg-grey">
         <p class="m-0 text-dark text-center ">Copyright &copy; Bia Simplí</p>
+        <p class="m-0 text-center text-dark">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+            <i class="fab fa-instagram-square ms-3"></i></p>
     </footer>
 
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+    </script>
 
 </body>
 
