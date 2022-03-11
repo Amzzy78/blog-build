@@ -14,7 +14,6 @@ class Post(models.Model):
         User, on_delete=models.CASCADE,
         related_name='blog_posts'
         )
-
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
@@ -32,9 +31,9 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
-    # def likes_count(self, obj):
-    #     return len(obj.likes.all())
-    # likes_count.short_description = 'Likes'
+    def likes_count(self, obj):
+        return len(obj.likes.all())
+    likes_count.short_description = 'Likes'
 
 
 class Comment(models.Model):

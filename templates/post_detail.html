@@ -20,7 +20,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4  mt-3 left top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
@@ -32,14 +32,31 @@
                         <img src=" {{ post.featured_image.url }}" width="100%">
                         {% endif %} 
                         
-                        <div class="card-img-overlay">
+                        <!-- <div class="card-img-overlay">
                           <h2 class="card-title text-warning">Card title</h2>
                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                           
-                        </div>
+                        </div> -->
                       </div>
                     {{ post.content | safe }}
                 </p>
+                <!-- <div class="container">
+                    <div class="row">
+                        
+                        <div class="col card mb-4  mt-3 left top">
+                            <div class="card-body">
+                                <h3 class="card-text">Ingredients</h3>
+                                
+                                
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div> -->
           
               
                 <div class="row">
