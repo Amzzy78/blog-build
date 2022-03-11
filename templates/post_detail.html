@@ -1,22 +1,23 @@
 {% extends 'base.html' %} {% block content %}
-    {% load crispy_forms_tags %}
+{% load crispy_forms_tags %}
 
-    <div class="jumbotron jumbotron-fluid" style="background: url(https://res.cloudinary.com/ann-marie-murphy/image/upload/c_scale,q_auto:eco,w_1024/v1646839353/hret7d20mg1tjhoecxfp.webp) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
-        <div class="overlay">
-        </div>
-        <div class="container">
-            <div class="row g-0">
-                <div class="col-md-6 site-heading">
-                    <!-- Post title goes in these h1 tags -->
-                    <h1 class="post-title">{{ post.title }}</h1>
-                    <!-- Post author goes before the | the post's created date goes after -->
-                    <p class="post-subtitle text-white">{{ post.author }} | {{ post.created_on }}</p>
-                </div>
-
+<div class="jumbotron jumbotron-fluid"
+    style="background: url(https://res.cloudinary.com/ann-marie-murphy/image/upload/c_scale,q_auto:eco,w_1024/v1646839353/hret7d20mg1tjhoecxfp.webp) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+    <div class="overlay">
+    </div>
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 site-heading">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="post-subtitle text-white">{{ post.author }} | {{ post.created_on }}</p>
             </div>
+
         </div>
     </div>
-    
+</div>
+
 
 <div class="container">
     <div class="row">
@@ -27,38 +28,18 @@
                 <p class="card-text ">
                     <div class="card bg-dark text-white">
                         {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img" src="https://res.cloudinary.com/ann-marie-murphy/image/upload/c_scale,q_auto:eco,w_1024/v1646839353/hret7d20mg1tjhoecxfp.webp" class="img-fluid" alt="Card image">
+                        <img class="card-img"
+                            src="https://res.cloudinary.com/ann-marie-murphy/image/upload/c_scale,q_auto:eco,w_1024/v1646839353/hret7d20mg1tjhoecxfp.webp"
+                            class="img-fluid" alt="Card image">
                         {% else %}
                         <img src=" {{ post.featured_image.url }}" width="100%">
-                        {% endif %} 
-                        
-                        <!-- <div class="card-img-overlay">
-                          <h2 class="card-title text-warning">Card title</h2>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          
-                        </div> -->
-                      </div>
-                    {{ post.content | safe }}
-                </p>
-                <!-- <div class="container">
-                    <div class="row">
-                        
-                        <div class="col card mb-4  mt-3 left top">
-                            <div class="card-body">
-                                <h3 class="card-text">Ingredients</h3>
-                                
-                                
-
-                            </div>
-
-                        </div>
+                        {% endif %}
 
                     </div>
+                    {{ post.content | safe }}
+                </p>
 
 
-                </div> -->
-          
-              
                 <div class="row">
 
                     <div class="col-1">
@@ -68,10 +49,12 @@
                                 {% csrf_token %}
                                 {% if liked %}
 
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
 
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
 
 
                                 {% endif %}
@@ -95,54 +78,54 @@
             </div>
         </div>
     </div>
-    </div>
-           
-    <div class="container">
-            <div class="col-md-8 card mb-4  mt-3 ">
-                <div class="card-body">
-                    <!-- comments -->
-                    {% with comments.count as total_comments %}
-                        <h2>{{ total_comments }} comments</h2>
+</div>
 
-                        <p>
-                    {% endwith %} {% for comment in comments %}
-                        </p>
-                        </div>
+<div class="container">
+    <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="card-body">
+            <!-- comments -->
+            {% with comments.count as total_comments %}
+            <h2>{{ total_comments }} comments</h2>
 
-                        <div class="comments" style="padding: 10px;">
-                            <p class="font-weight-bold">
-                                {{ comment.name }}
-                                <span class=" text-muted font-weight-normal">
-                                    {{ comment.created_on }}
-                                </span>
-                            </p>
-                            {{ comment.body | linebreaks }}
-                        </div>
-
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="container">
-            <div class="col-md-8 card mb-4  mt-3 ">
-                <div class="card-body">
-                    {% if new_comment %}
-                        <div class="alert alert-success" role="alert">
-                            Your comment is awaiting moderation
-                        </div>
-                    {% else %}
-                        <h3>Leave a comment</h3>
-                        <form method="post" style="margin-top: 1.3em;">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-                        </form>
-                    {% endif %}
-                </div>
-            </div>
-
+            <p>
+                {% endwith %} {% for comment in comments %}
+            </p>
         </div>
 
+        <div class="comments" style="padding: 10px;">
+            <p class="font-weight-bold">
+                {{ comment.name }}
+                <span class=" text-muted font-weight-normal">
+                    {{ comment.created_on }}
+                </span>
+            </p>
+            {{ comment.body | linebreaks }}
+        </div>
+
+        {% endfor %}
     </div>
-    
+</div>
+<div class="container">
+    <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="card-body">
+            {% if new_comment %}
+            <div class="alert alert-success" role="alert">
+                Your comment is awaiting moderation
+            </div>
+            {% else %}
+            <h3>Leave a comment</h3>
+            <form method="post" style="margin-top: 1.3em;">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+</div>
+
 
 {% endblock content %}
