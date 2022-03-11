@@ -1,6 +1,8 @@
-![logo]()
+![]()
 
-Welcome to Bia Simplí,
+# Welcome to Bia Simplí,
+
+## I have not done the readme and this is just a thrown together bunch of notes and text I pasted from the sites I was using. Also the blog is not finished at all. This is a fail and I am just submitting to get something in. 
 
 In this Blog application with Django it allows users to create, edit, and delete posts. The homepage will list all blog posts, and there will be a dedicated detail page for each individual post. 
 
@@ -12,7 +14,7 @@ Then performed make migrations. This applied all the unapplied migrations on the
 
 https://djangocentral.com/building-a-blog-application-with-django/
 
-Edit this tutorial 
+### Edit the following text......... 
 
 Database Models
 I defined the data models for the blog. A model is a Python class that subclasses django.db.models.Model, in which each attribute represents a database field. Using this subclass functionality, we automatically have access to everything within django.db.models.Models and can add additional fields and methods as desired. We will have a Post model in our database to store posts.
